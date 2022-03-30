@@ -1,0 +1,54 @@
+
+*** Running vivado
+    with args -log SoC_pingpong_v3.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source SoC_pingpong_v3.tcl -notrace
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source SoC_pingpong_v3.tcl -notrace
+Command: link_design -top SoC_pingpong_v3 -part xc7z020clg484-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [H:/SoC/SoC_pingpong_vivado.xdc]
+Finished Parsing XDC File [H:/SoC/SoC_pingpong_vivado.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 609.602 ; gain = 331.734
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net led_OBUF[0] has multiple drivers: SignalLED_reg[0]/Q, and led_reg[0]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net led_OBUF[1] has multiple drivers: SignalLED_reg[1]/Q, and led_reg[1]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net led_OBUF[2] has multiple drivers: SignalLED_reg[2]/Q, and led_reg[2]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net led_OBUF[3] has multiple drivers: SignalLED_reg[3]/Q, and led_reg[3]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net led_OBUF[4] has multiple drivers: SignalLED_reg[4]/Q, and led_reg[4]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net led_OBUF[5] has multiple drivers: SignalLED_reg[5]/Q, and led_reg[5]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net led_OBUF[6] has multiple drivers: SignalLED_reg[6]/Q, and led_reg[6]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net led_OBUF[7] has multiple drivers: SignalLED_reg[7]/Q, and led_reg[7]/Q.
+INFO: [Project 1-461] DRC finished with 8 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.842 . Memory (MB): peak = 623.059 ; gain = 13.457
+INFO: [Common 17-83] Releasing license: Implementation
+12 Infos, 0 Warnings, 0 Critical Warnings and 9 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 25 16:02:38 2022...

@@ -1,0 +1,341 @@
+
+*** Running vivado
+    with args -log SoC_pingpong_v3.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SoC_pingpong_v3.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source SoC_pingpong_v3.tcl -notrace
+Command: synth_design -top SoC_pingpong_v3 -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9824 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 386.625 ; gain = 101.195
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'SoC_pingpong_v3' [H:/SoC/SoC_pingpong_speed_v1.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'SoC_pingpong_v3' (1#1) [H:/SoC/SoC_pingpong_speed_v1.vhd:15]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 434.141 ; gain = 148.711
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 434.141 ; gain = 148.711
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [H:/SoC/SoC_pingpong_vivado.xdc]
+Finished Parsing XDC File [H:/SoC/SoC_pingpong_vivado.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [H:/SoC/SoC_pingpong_vivado.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/SoC_pingpong_v3_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/SoC_pingpong_v3_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 785.906 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 785.906 ; gain = 500.477
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 785.906 ; gain = 500.477
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 785.906 ; gain = 500.477
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'SoC_pingpong_v3'
+INFO: [Synth 8-5544] ROM "flag_ctrl" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "SignalLED" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element freq_reg was removed.  [H:/SoC/SoC_pingpong_speed_v1.vhd:50]
+WARNING: [Synth 8-6014] Unused sequential element regCntSW_reg was removed.  [H:/SoC/SoC_pingpong_speed_v1.vhd:109]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 initial |                              000 |                             0010
+                leftmove |                              001 |                             0000
+                 waitpl1 |                              010 |                             0101
+               rightmove |                              011 |                             0001
+                 waitpl2 |                              100 |                             0110
+                   p1win |                              101 |                             0011
+                   p2win |                              110 |                             0100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'SoC_pingpong_v3'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 785.906 ; gain = 500.477
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 3     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 5     
+	   7 Input      8 Bit        Muxes := 1     
+	  17 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   7 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module SoC_pingpong_v3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 3     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 5     
+	   7 Input      8 Bit        Muxes := 1     
+	  17 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   7 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element freq_reg was removed.  [H:/SoC/SoC_pingpong_speed_v1.vhd:50]
+WARNING: [Synth 8-6014] Unused sequential element regCntSW_reg was removed.  [H:/SoC/SoC_pingpong_speed_v1.vhd:109]
+WARNING: [Synth 8-3332] Sequential element (freq_reg[22]) is unused and will be removed from module SoC_pingpong_v3.
+WARNING: [Synth 8-3332] Sequential element (freq_reg[23]) is unused and will be removed from module SoC_pingpong_v3.
+WARNING: [Synth 8-3332] Sequential element (freq_reg[24]) is unused and will be removed from module SoC_pingpong_v3.
+WARNING: [Synth 8-3332] Sequential element (freq_reg[25]) is unused and will be removed from module SoC_pingpong_v3.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 785.906 ; gain = 500.477
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 795.773 ; gain = 510.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 795.805 ; gain = 510.375
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:36 . Memory (MB): peak = 815.699 ; gain = 530.270
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:38 . Memory (MB): peak = 815.699 ; gain = 530.270
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[7] with 1st driver pin 'SignalLED_reg[7]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:154]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[7] with 2nd driver pin 'led_reg[7]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:123]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[6] with 1st driver pin 'SignalLED_reg[6]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:154]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[6] with 2nd driver pin 'led_reg[6]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:123]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[5] with 1st driver pin 'SignalLED_reg[5]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:154]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[5] with 2nd driver pin 'led_reg[5]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:123]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[4] with 1st driver pin 'SignalLED_reg[4]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:154]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[4] with 2nd driver pin 'led_reg[4]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:123]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[3] with 1st driver pin 'SignalLED_reg[3]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:154]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[3] with 2nd driver pin 'led_reg[3]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:123]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[2] with 1st driver pin 'SignalLED_reg[2]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:154]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[2] with 2nd driver pin 'led_reg[2]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:123]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[1] with 1st driver pin 'SignalLED_reg[1]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:154]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[1] with 2nd driver pin 'led_reg[1]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:123]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[0] with 1st driver pin 'SignalLED_reg[0]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:154]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net led_OBUF[0] with 2nd driver pin 'led_reg[0]/Q' [H:/SoC/SoC_pingpong_speed_v1.vhd:123]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        8|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:38 . Memory (MB): peak = 815.699 ; gain = 530.270
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:39 . Memory (MB): peak = 815.699 ; gain = 530.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:39 . Memory (MB): peak = 815.699 ; gain = 530.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:39 . Memory (MB): peak = 815.699 ; gain = 530.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:39 . Memory (MB): peak = 815.699 ; gain = 530.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     8|
+|3     |LUT1   |     3|
+|4     |LUT2   |    12|
+|5     |LUT3   |     6|
+|6     |LUT4   |    25|
+|7     |LUT5   |     7|
+|8     |LUT6   |    16|
+|9     |FDCE   |    61|
+|10    |FDPE   |     2|
+|11    |FDRE   |     8|
+|12    |IBUF   |    12|
+|13    |OBUF   |     8|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   169|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:40 . Memory (MB): peak = 815.699 ; gain = 530.270
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 16 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:31 . Memory (MB): peak = 815.699 ; gain = 178.504
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:40 . Memory (MB): peak = 815.699 ; gain = 530.270
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+26 Infos, 8 Warnings, 16 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:44 . Memory (MB): peak = 817.488 ; gain = 544.465
+INFO: [Common 17-1381] The checkpoint 'H:/SoC/SoC_HW 2017/SoC_pingpong/SoC_pingpong.runs/synth_1/SoC_pingpong_v3.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file SoC_pingpong_v3_utilization_synth.rpt -pb SoC_pingpong_v3_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 817.488 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 25 16:02:15 2022...

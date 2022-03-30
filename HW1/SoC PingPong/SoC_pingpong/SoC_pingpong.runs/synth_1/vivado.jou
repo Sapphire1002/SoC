@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Mar 25 16:01:24 2022
+# Process ID: 9856
+# Current directory: H:/SoC/SoC_HW 2017/SoC_pingpong/SoC_pingpong.runs/synth_1
+# Command line: vivado.exe -log SoC_pingpong_v3.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SoC_pingpong_v3.tcl
+# Log file: H:/SoC/SoC_HW 2017/SoC_pingpong/SoC_pingpong.runs/synth_1/SoC_pingpong_v3.vds
+# Journal file: H:/SoC/SoC_HW 2017/SoC_pingpong/SoC_pingpong.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source SoC_pingpong_v3.tcl -notrace
